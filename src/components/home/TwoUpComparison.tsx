@@ -1,57 +1,60 @@
-'use client'
+'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
-import 'two-up-element';
-
-import {
-  Card,
-  CardContent
-} from "@/components/ui/card";
-
-import type { TwoUpComparisonProps } from '@/interfaces/ComponentsProps';
 import JSConfetti from 'js-confetti';
 
-export const TwoUpComparison = ({ firstImg, secondImg, setLoading }: TwoUpComparisonProps) => {
+import { Card, CardContent } from '@/components/ui/card';
+import type { TwoUpComparisonProps } from '@/interfaces/ComponentsProps';
+
+const TwoUpComparison = ({ firstImg, secondImg, setLoading }: TwoUpComparisonProps) => {
   const secondImgRef = useRef<HTMLImageElement>(null);
-
-  const jsConfetti = new JSConfetti()
-
+  const jsConfetti = new JSConfetti();
 
   const handleImageLoad = () => {
     setLoading(false);
     jsConfetti.addConfetti({
-      emojis: ['👻', '🎃', '💀', '👻', '💀', '🎃']
-    })
+      emojis: ['👻', '🎃', '💀', '👻', '💀', '🎃'],
+    });
   };
+
+  useEffect(() => {
+    // Cargar el Web Component solo en el cliente
+    const loadTwoUpElement = async () => {
+      if (typeof window !== 'undefined') {
+        await import('two-up-element');
+      }
+    };
+
+    loadTwoUpElement();
+  }, []);
 
   return (
     <Card>
       <CardContent className="flex flex-col sm:flex-row justify-center p-2 gap-2">
         <two-up>
-          {
-            firstImg && secondImg && (
-              <>
-                <Image
-                  src={ firstImg }
-                  alt='first comparison image'
-                  width={ 460 }
-                  height={ 400 }
-                />
-
-                <Image
-                  src={ secondImg }
-                  alt='second comparison image'
-                  width={ 460 }
-                  height={ 400 }
-                  ref={ secondImgRef }
-                  onLoad={ handleImageLoad }
-                />
-              </>
-            )
-          }
+          { firstImg && secondImg && (
+            <>
+              <Image
+                src={ firstImg }
+                alt="first comparison image"
+                width={ 460 }
+                height={ 400 }
+              />
+              <Image
+                src={ secondImg }
+                alt="second comparison image"
+                width={ 460 }
+                height={ 400 }
+                ref={ secondImgRef }
+                onLoad={ handleImageLoad }
+              />
+            </>
+          ) }
         </two-up>
       </CardContent>
     </Card>
   );
 };
+
+export default TwoUpComparison;

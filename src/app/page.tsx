@@ -1,4 +1,3 @@
-// import { CommingSoon } from './components/CommingSoon';
 import { Example } from '../components/example/Example';
 import { Start } from '../components/home/Start';
 
