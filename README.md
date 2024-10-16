@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Monster Image Transformation
 
-First, run the development server:
+Este proyecto es una aplicación web desarrollada para una hackathon de Cloudinary. Los usuarios pueden subir imágenes y aplicarles una transformación temática, convirtiendo a las personas en monstruos seleccionados aleatoriamente. La imagen resultante puede descargarse tras la transformación.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Características
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Subida de imágenes**: Los usuarios pueden cargar imágenes desde sus dispositivos.
+- **Transformación aleatoria**: La aplicación selecciona un monstruo aleatorio de una lista y transforma la imagen.
+- **Comparación**: Se muestra una vista en paralelo entre la imagen original y la transformada.
+- **Descarga**: El usuario puede descargar la imagen transformada.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tecnologías Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js**: Framework utilizado para el desarrollo del frontend.
+- **React**: Librería para la creación de interfaces interactivas.
+- **TypeScript**: Lenguaje para asegurar la tipificación estática.
+- **Tailwind CSS**: Framework CSS para un diseño responsivo y moderno.
+- **Shadcn/ui**: Librería de componentes de interfaz.
+- **Cloudinary**: Para la subida y manipulación de imágenes.
 
-## Learn More
+## Instalación
 
-To learn more about Next.js, take a look at the following resources:
+### Requisitos previos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js y npm/pnpm instalados.
+- Cuenta en [Cloudinary](https://cloudinary.com/).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Pasos
 
-## Deploy on Vercel
+1. Clona el repositorio:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    git clone https://github.com/usuario/monster-image-transformation.git
+    cd monster-image-transformation
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Instala las dependencias:
+
+    ```bash
+    pnpm install
+    ```
+
+3. Configura las variables de entorno:
+   
+   Crea un archivo `.env.local` en la raíz del proyecto y añade tus credenciales de Cloudinary:
+
+    ```env
+    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=tu_cloud_name
+    NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=tu_upload_preset
+    ```
+
+4. Ejecuta el proyecto localmente:
+
+    ```bash
+    pnpm dev
+    ```
+
+5. Abre el navegador y navega a `http://localhost:3000`.
+
+## Uso
+
+1. Haz clic en el botón **Sube tu foto**.
+2. Selecciona una imagen desde tu dispositivo.
+3. La imagen será transformada automáticamente, aplicando la temática del monstruo seleccionado al azar.
+4. Puedes comparar el resultado y descargar la imagen transformada.
+
