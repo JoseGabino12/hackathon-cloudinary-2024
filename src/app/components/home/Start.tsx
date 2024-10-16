@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/app/components/ui/button';
 import { CldUploadWidget } from 'next-cloudinary';
 import { getCldImageUrl } from 'next-cloudinary';
 
@@ -9,7 +9,10 @@ import type { StartProps } from '@/interfaces/ComponentsProps';
 import type { CloudinaryUploadWidgetInfo } from '@/types/cloudinary';
 import { monsters } from '@/data/monsters';
 import { welcome, loading, completed } from '@/data/titles';
-import TwoUpComparison from './TwoUpComparison'; // Asegúrate de que sea la importación correcta
+import TwoUpComparison from './TwoUpComparison';
+
+import { Loader2 } from 'lucide-react';
+
 
 export const Start = ({ creepster }: StartProps) => {
   const [publicId, setPublicId] = useState<CloudinaryUploadWidgetInfo>();
@@ -38,7 +41,7 @@ export const Start = ({ creepster }: StartProps) => {
   }, [publicId, monster]);
 
   return (
-    <div className="flex flex-col min-h-screen items-center text-center text-pretty justify-center gap-5 p-5">
+    <div className="flex flex-col min-h-[800px] items-center text-center text-pretty justify-center gap-5 p-5">
       <h1 className={ `text-5xl text-orange-600 ${creepster.className} text-pretty` }>
         { isLoading ? loading : imgExist ? `${completed} ${monster}!` : welcome }
       </h1>
@@ -64,7 +67,7 @@ export const Start = ({ creepster }: StartProps) => {
       >
         { ({ open }) => (
           <Button onClick={ () => open() } disabled={ isLoading }>
-            Sube tu foto
+            { isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Sube tu foto' }
           </Button>
         ) }
       </CldUploadWidget>
@@ -76,6 +79,7 @@ export const Start = ({ creepster }: StartProps) => {
           setLoading={ setIsLoading }
         />
       ) }
+
       { imgExist && imgEmpty && !isLoading && (
         <a href={ publicIdTrans } download className="mt-4" target="_blank">
           <Button>Descarga la imagen</Button>

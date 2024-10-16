@@ -4,8 +4,9 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import JSConfetti from 'js-confetti';
 
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@/app/components/ui/card';
 import type { TwoUpComparisonProps } from '@/interfaces/ComponentsProps';
+
 
 const TwoUpComparison = ({ firstImg, secondImg, setLoading }: TwoUpComparisonProps) => {
   const jsConfetti = new JSConfetti();
@@ -40,6 +41,7 @@ const TwoUpComparison = ({ firstImg, secondImg, setLoading }: TwoUpComparisonPro
                 width={ 460 }
                 height={ 400 }
               />
+
               <img
                 src={ secondImg }
                 alt="second comparison image"

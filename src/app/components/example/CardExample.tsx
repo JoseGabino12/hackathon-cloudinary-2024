@@ -5,7 +5,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/app/components/ui/card";
 
 import { CldImage } from 'next-cloudinary';
 import type { CardExampleProp } from '@/interfaces/ComponentsProps';
