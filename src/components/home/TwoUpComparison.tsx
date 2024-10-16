@@ -40,7 +40,7 @@ const TwoUpComparison = ({ firstImg, secondImg, setLoading }: TwoUpComparisonPro
                 width={ 460 }
                 height={ 400 }
               />
-              <Image
+              <img
                 src={ secondImg }
                 alt="second comparison image"
                 width={ 460 }
