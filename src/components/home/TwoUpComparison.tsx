@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import JSConfetti from 'js-confetti';
 
@@ -8,7 +8,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import type { TwoUpComparisonProps } from '@/interfaces/ComponentsProps';
 
 const TwoUpComparison = ({ firstImg, secondImg, setLoading }: TwoUpComparisonProps) => {
-  const secondImgRef = useRef<HTMLImageElement>(null);
   const jsConfetti = new JSConfetti();
 
   const handleImageLoad = () => {
@@ -46,7 +45,6 @@ const TwoUpComparison = ({ firstImg, secondImg, setLoading }: TwoUpComparisonPro
                 alt="second comparison image"
                 width={ 460 }
                 height={ 400 }
-                ref={ secondImgRef }
                 onLoad={ handleImageLoad }
               />
             </>
