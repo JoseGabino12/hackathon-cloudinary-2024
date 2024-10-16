@@ -1,5 +1,5 @@
 
-# Monster Image Transformation
+# Monstrous Makeover
 
 Este proyecto es una aplicación web desarrollada para una hackathon de Cloudinary. Los usuarios pueden subir imágenes y aplicarles una transformación temática, convirtiendo a las personas en monstruos seleccionados aleatoriamente. La imagen resultante puede descargarse tras la transformación.
 
