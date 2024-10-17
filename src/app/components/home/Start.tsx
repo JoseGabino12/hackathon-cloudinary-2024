@@ -41,7 +41,7 @@ export const Start = ({ creepster }: StartProps) => {
   }, [publicId, monster]);
 
   return (
-    <div className="flex flex-col min-h-[800px] items-center text-center text-pretty justify-center gap-5 p-5">
+    <div className="flex flex-col min-h-screen items-center text-center text-pretty justify-center gap-5 p-5">
       <h1 className={ `text-5xl text-orange-600 ${creepster.className} text-pretty` }>
         { isLoading ? loading : imgExist ? `${completed} ${monster}!` : welcome }
       </h1>

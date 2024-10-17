@@ -4,7 +4,7 @@ import type { StartProps } from '@/interfaces/ComponentsProps';
 
 export const Example = ({ creepster }: StartProps) => {
   return (
-    <div id='example' className="p-5">
+    <div className="p-5">
       <h1 className="text-xl font-semibold mb-4">Ve algunos ejemplos</h1>
 
       <div className="grid grid-cols-1 sm:grid-rows-2 sm:grid-cols-2 gap-4">

@@ -17,12 +17,6 @@ export default function Home() {
   return (
     <main className={ `${denk.className}`}>
       <Start creepster={ creepster } />
-      <div className='flex justify-center'>
-        <a href='#example' className='flex flex-col items-center'>
-          <h2>Ejemplos 🎃</h2>
-          <p className='animate-bounce'>↓</p>
-        </a>
-      </div>
       <Example creepster={ creepster } />
     </main>
   );
