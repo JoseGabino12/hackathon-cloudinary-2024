@@ -1,4 +1,5 @@
 import { Example } from './components/example/Example';
+import { Header } from './components/Header';
 import { Start } from './components/home/Start';
 
 import { Creepster, Denk_One } from 'next/font/google';
@@ -16,6 +17,7 @@ const denk = Denk_One({
 export default function Home() {
   return (
     <main className={ `${denk.className}`}>
+      <Header />
       <Start creepster={ creepster } />
       <Example creepster={ creepster } />
     </main>

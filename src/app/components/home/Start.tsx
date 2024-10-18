@@ -13,7 +13,6 @@ import TwoUpComparison from './TwoUpComparison';
 
 import { Loader2 } from 'lucide-react';
 
-
 export const Start = ({ creepster }: StartProps) => {
   const [publicId, setPublicId] = useState<CloudinaryUploadWidgetInfo>();
   const [publicIdTrans, setPublicIdTrans] = useState<string | undefined>();
